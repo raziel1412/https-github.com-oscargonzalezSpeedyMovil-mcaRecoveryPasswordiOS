@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		1D1E497521B5E61A007C61B1 /* mcaRecoveryPassword.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D1E497321B5E61A007C61B1 /* mcaRecoveryPassword.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D1E497C21B5E80C007C61B1 /* RecoveryPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E497B21B5E80C007C61B1 /* RecoveryPasswordVC.swift */; };
+		1D1E498721B5EF95007C61B1 /* CodeRecoveryPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E498621B5EF95007C61B1 /* CodeRecoveryPasswordVC.swift */; };
+		7FCF4230D9FAC1899886B11D /* Pods_mcaRecoveryPassword.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5EE89D794A517EEC995BFB1 /* Pods_mcaRecoveryPassword.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D1E497021B5E61A007C61B1 /* mcaRecoveryPassword.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mcaRecoveryPassword.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1E497321B5E61A007C61B1 /* mcaRecoveryPassword.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mcaRecoveryPassword.h; sourceTree = "<group>"; };
 		1D1E497421B5E61A007C61B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D1E497B21B5E80C007C61B1 /* RecoveryPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordVC.swift; sourceTree = "<group>"; };
+		1D1E498621B5EF95007C61B1 /* CodeRecoveryPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeRecoveryPasswordVC.swift; sourceTree = "<group>"; };
+		241C21F9D41ACB29E3E916D8 /* Pods-mcaRecoveryPassword.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mcaRecoveryPassword.debug.xcconfig"; path = "../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRecoveryPassword/Pods-mcaRecoveryPassword.debug.xcconfig"; sourceTree = "<group>"; };
+		AEA6634A4CFD050AB7599274 /* Pods-mcaRecoveryPassword.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mcaRecoveryPassword.release.xcconfig"; path = "../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRecoveryPassword/Pods-mcaRecoveryPassword.release.xcconfig"; sourceTree = "<group>"; };
+		B5EE89D794A517EEC995BFB1 /* Pods_mcaRecoveryPassword.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mcaRecoveryPassword.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FCF4230D9FAC1899886B11D /* Pods_mcaRecoveryPassword.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,6 +41,8 @@
 			children = (
 				1D1E497221B5E61A007C61B1 /* mcaRecoveryPassword */,
 				1D1E497121B5E61A007C61B1 /* Products */,
+				D5460C69CB4560B2CBEC4B41 /* Pods */,
+				7B50063A96F21F99B6A0D89E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -48,8 +59,27 @@
 			children = (
 				1D1E497321B5E61A007C61B1 /* mcaRecoveryPassword.h */,
 				1D1E497421B5E61A007C61B1 /* Info.plist */,
+				1D1E497B21B5E80C007C61B1 /* RecoveryPasswordVC.swift */,
+				1D1E498621B5EF95007C61B1 /* CodeRecoveryPasswordVC.swift */,
 			);
 			path = mcaRecoveryPassword;
+			sourceTree = "<group>";
+		};
+		7B50063A96F21F99B6A0D89E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5EE89D794A517EEC995BFB1 /* Pods_mcaRecoveryPassword.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5460C69CB4560B2CBEC4B41 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				241C21F9D41ACB29E3E916D8 /* Pods-mcaRecoveryPassword.debug.xcconfig */,
+				AEA6634A4CFD050AB7599274 /* Pods-mcaRecoveryPassword.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,10 +100,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D1E497821B5E61A007C61B1 /* Build configuration list for PBXNativeTarget "mcaRecoveryPassword" */;
 			buildPhases = (
+				024111CB1A1D2153A6F9AFE1 /* [CP] Check Pods Manifest.lock */,
 				1D1E496B21B5E61A007C61B1 /* Headers */,
 				1D1E496C21B5E61A007C61B1 /* Sources */,
 				1D1E496D21B5E61A007C61B1 /* Frameworks */,
 				1D1E496E21B5E61A007C61B1 /* Resources */,
+				F2FDF9E49E52FD6DAB6D3A43 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -95,6 +127,7 @@
 				TargetAttributes = {
 					1D1E496F21B5E61A007C61B1 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -125,11 +158,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		024111CB1A1D2153A6F9AFE1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mcaRecoveryPassword-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2FDF9E49E52FD6DAB6D3A43 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRecoveryPassword/Pods-mcaRecoveryPassword-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/IBMMobileFirstPlatformFoundation/IBMMobileFirstPlatformFoundation/Resources/Localizations.bundle",
+				"${PODS_ROOT}/khenshin/Products/khenshin.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Localizations.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/khenshin.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRecoveryPassword/Pods-mcaRecoveryPassword-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1D1E496C21B5E61A007C61B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D1E497C21B5E80C007C61B1 /* RecoveryPasswordVC.swift in Sources */,
+				1D1E498721B5EF95007C61B1 /* CodeRecoveryPasswordVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,7 +266,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -246,7 +324,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -260,7 +338,9 @@
 		};
 		1D1E497921B5E61A007C61B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 241C21F9D41ACB29E3E916D8 /* Pods-mcaRecoveryPassword.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -270,6 +350,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = mcaRecoveryPassword/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -278,14 +359,17 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.miclaro.app.mcaRecoveryPassword;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		1D1E497A21B5E61A007C61B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEA6634A4CFD050AB7599274 /* Pods-mcaRecoveryPassword.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -295,6 +379,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = mcaRecoveryPassword/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,7 +388,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.miclaro.app.mcaRecoveryPassword;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
