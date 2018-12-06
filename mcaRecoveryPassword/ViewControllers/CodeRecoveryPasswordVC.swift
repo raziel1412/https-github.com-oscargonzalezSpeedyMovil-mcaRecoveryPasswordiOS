@@ -14,6 +14,9 @@ import Cartography
 // Clase encargada de mostrar la vista para ingresar el código de recuperación de la contraseña
 class CodeRecoveryPasswordVC: UIViewController, LinkeableEventDelegate {
     
+    var homeVC: UIViewController?
+    var doAutomaticLogin: Bool = false
+    
     /// Variable que almacena el objeto GetTempPasswordRequest
     var gtpRequest : GetTempPasswordRequest?
     /// Variable que almacena el objeto GetTempPasswordResult
@@ -167,9 +170,9 @@ class CodeRecoveryPasswordVC: UIViewController, LinkeableEventDelegate {
         mcaManagerServer.executeValidateTempPassword(params: req,
                                                            onSuccess: { [req] (result) in
                                                             self.tryAttemps = 1
-//                                                            piprloginVClet rpcp = RecoverPasswordConfirmPasswordVC();
-//                                                            rpcp.setVTPR(value: req);
-//                                                            self.navigationController?.pushViewController(rpcp, animated: true);
+                                                            let rpcp = RecoverPasswordConfirmPasswordVC();
+                                                            rpcp.setVTPR(value: req);
+                                                            self.navigationController?.pushViewController(rpcp, animated: true);
             },
                                                            onFailure: { (result, myError) in
                                                             if self.tryOutNumbers > self.tryAttemps {
@@ -178,7 +181,7 @@ class CodeRecoveryPasswordVC: UIViewController, LinkeableEventDelegate {
                                                                 GeneralAlerts.showAcceptOnly(text: result?.validateTempPasswordResponse?.acknowledgementDescription ?? "", icon: AlertIconType.IconoAlertaError, onAcceptEvent: {})
                                                                 
                                                             } else {
-                                                                if let viewController = self.findPasswordRecoveryVC() {
+                                                                if let viewController = mcaRecoveryPasswordManager.findPasswordRecoveryVC(navigation: self.navigationController) {
                                                                     self.navigationController?.popToViewController(viewController, animated: true)
                                                                 } else {
                                                                     self.navigationController?.popToRootViewController(animated: true)
@@ -204,7 +207,7 @@ class CodeRecoveryPasswordVC: UIViewController, LinkeableEventDelegate {
                                                             self.tryAttempsResend += 1
                                                             
                                                         } else {
-                                                            if let viewController = self.findPasswordRecoveryVC() {
+                                                            if let viewController = mcaRecoveryPasswordManager.findPasswordRecoveryVC(navigation: self.navigationController) {
                                                                 self.navigationController?.popToViewController(viewController, animated: true)
                                                             } else {
                                                                 self.navigationController?.popToRootViewController(animated: true)
@@ -244,17 +247,6 @@ class CodeRecoveryPasswordVC: UIViewController, LinkeableEventDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func findPasswordRecoveryVC() -> UIViewController? {
-        if let viewControllers = self.navigationController?.viewControllers {
-            for viewController in viewControllers {
-                if viewController.isKind(of: RecoveryPasswordVC.self) {
-                    return viewController
-                }
-            }
-        }
-        return nil
     }
     
     

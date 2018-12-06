@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1D1E497521B5E61A007C61B1 /* mcaRecoveryPassword.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D1E497321B5E61A007C61B1 /* mcaRecoveryPassword.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D1E497C21B5E80C007C61B1 /* RecoveryPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E497B21B5E80C007C61B1 /* RecoveryPasswordVC.swift */; };
-		1D1E498721B5EF95007C61B1 /* CodeRecoveryPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E498621B5EF95007C61B1 /* CodeRecoveryPasswordVC.swift */; };
+		1D1E49D621B9DC3B007C61B1 /* RecoveryPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E49D321B9DC3A007C61B1 /* RecoveryPasswordVC.swift */; };
+		1D1E49D721B9DC3B007C61B1 /* RecoverPasswordConfirmPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E49D421B9DC3A007C61B1 /* RecoverPasswordConfirmPasswordVC.swift */; };
+		1D1E49D821B9DC3B007C61B1 /* CodeRecoveryPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E49D521B9DC3A007C61B1 /* CodeRecoveryPasswordVC.swift */; };
+		1D1E49DA21B9E055007C61B1 /* mcaRecoveryPasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E49D921B9E055007C61B1 /* mcaRecoveryPasswordManager.swift */; };
 		7FCF4230D9FAC1899886B11D /* Pods_mcaRecoveryPassword.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5EE89D794A517EEC995BFB1 /* Pods_mcaRecoveryPassword.framework */; };
 /* End PBXBuildFile section */
 
@@ -17,8 +19,10 @@
 		1D1E497021B5E61A007C61B1 /* mcaRecoveryPassword.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mcaRecoveryPassword.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1E497321B5E61A007C61B1 /* mcaRecoveryPassword.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mcaRecoveryPassword.h; sourceTree = "<group>"; };
 		1D1E497421B5E61A007C61B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D1E497B21B5E80C007C61B1 /* RecoveryPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordVC.swift; sourceTree = "<group>"; };
-		1D1E498621B5EF95007C61B1 /* CodeRecoveryPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeRecoveryPasswordVC.swift; sourceTree = "<group>"; };
+		1D1E49D321B9DC3A007C61B1 /* RecoveryPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordVC.swift; sourceTree = "<group>"; };
+		1D1E49D421B9DC3A007C61B1 /* RecoverPasswordConfirmPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoverPasswordConfirmPasswordVC.swift; sourceTree = "<group>"; };
+		1D1E49D521B9DC3A007C61B1 /* CodeRecoveryPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeRecoveryPasswordVC.swift; sourceTree = "<group>"; };
+		1D1E49D921B9E055007C61B1 /* mcaRecoveryPasswordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mcaRecoveryPasswordManager.swift; sourceTree = "<group>"; };
 		241C21F9D41ACB29E3E916D8 /* Pods-mcaRecoveryPassword.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mcaRecoveryPassword.debug.xcconfig"; path = "../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRecoveryPassword/Pods-mcaRecoveryPassword.debug.xcconfig"; sourceTree = "<group>"; };
 		AEA6634A4CFD050AB7599274 /* Pods-mcaRecoveryPassword.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mcaRecoveryPassword.release.xcconfig"; path = "../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRecoveryPassword/Pods-mcaRecoveryPassword.release.xcconfig"; sourceTree = "<group>"; };
 		B5EE89D794A517EEC995BFB1 /* Pods_mcaRecoveryPassword.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mcaRecoveryPassword.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,12 +61,22 @@
 		1D1E497221B5E61A007C61B1 /* mcaRecoveryPassword */ = {
 			isa = PBXGroup;
 			children = (
+				1D1E49D921B9E055007C61B1 /* mcaRecoveryPasswordManager.swift */,
+				1D1E49D221B9DC16007C61B1 /* ViewControllers */,
 				1D1E497321B5E61A007C61B1 /* mcaRecoveryPassword.h */,
 				1D1E497421B5E61A007C61B1 /* Info.plist */,
-				1D1E497B21B5E80C007C61B1 /* RecoveryPasswordVC.swift */,
-				1D1E498621B5EF95007C61B1 /* CodeRecoveryPasswordVC.swift */,
 			);
 			path = mcaRecoveryPassword;
+			sourceTree = "<group>";
+		};
+		1D1E49D221B9DC16007C61B1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1D1E49D521B9DC3A007C61B1 /* CodeRecoveryPasswordVC.swift */,
+				1D1E49D421B9DC3A007C61B1 /* RecoverPasswordConfirmPasswordVC.swift */,
+				1D1E49D321B9DC3A007C61B1 /* RecoveryPasswordVC.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		7B50063A96F21F99B6A0D89E /* Frameworks */ = {
@@ -206,8 +220,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D1E497C21B5E80C007C61B1 /* RecoveryPasswordVC.swift in Sources */,
-				1D1E498721B5EF95007C61B1 /* CodeRecoveryPasswordVC.swift in Sources */,
+				1D1E49D821B9DC3B007C61B1 /* CodeRecoveryPasswordVC.swift in Sources */,
+				1D1E49D721B9DC3B007C61B1 /* RecoverPasswordConfirmPasswordVC.swift in Sources */,
+				1D1E49DA21B9E055007C61B1 /* mcaRecoveryPasswordManager.swift in Sources */,
+				1D1E49D621B9DC3B007C61B1 /* RecoveryPasswordVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

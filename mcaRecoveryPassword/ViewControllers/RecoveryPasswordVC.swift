@@ -12,13 +12,16 @@ import mcaUtilsiOS
 import Cartography
 import SkyFloatingLabelTextField
 
-public class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, LinkeableEventDelegate {
+open class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, LinkeableEventDelegate {
+    
     public func ClickedBoldText() {
     }
     
     public func ClickedNormalText() {
     }
     
+    var homeVC: UIViewController?
+    var doAutomaticLogin: Bool = false
     
     private let conf = mcaManagerSession.getGeneralConfig()
     private var nextBtn: RedBorderWhiteBackgroundButton!
@@ -113,16 +116,16 @@ public class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, Linkeabl
     }
     
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         setupElements()
     }
     
-    override public func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    override public func viewWillAppear(_ animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         self.initWith(navigationType: .IconBack, headerTitle: conf?.translations?.data?.passwordRecovery?.header ?? "")
         
@@ -140,51 +143,15 @@ public class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, Linkeabl
             self.habilitarRecuperar()
         }
     }
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+    private func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         self.habilitarRecuperar()
         return true
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    private func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         if textField == txtRUT.textField {
             self.habilitarRecuperar()
-            //            txtRUT.title = (conf?.translations?.data?.generales?.rut)!
-            //            let newString = (textField.text! as NSString).replacingCharacters(in: range, with: string) as String
-            //            let nsString = NSString(string: newString)
-            //            if nsString.length > 12{
-            //                return false
-            //            }else{
-            //                return true
-            //            }
-            //Comentado por que cambiaron de opinion, se queda asi por si acaso
-            /*let rutTmp = txtRUT.text! as NSString
-             print("TEXT \((txtRUT.text)!) TEXT TO ADD: \(string) LENGT: \(rutTmp.length)")
-             
-             if rutTmp.length >= 7 {
-             if string != "" && rutTmp.length <= maxText {
-             txtRUT.text = txtRUT.text!.replacingOccurrences(of: "-", with: "")
-             let textTmp = "\((txtRUT.text)!)-"
-             txtRUT.text = textTmp + string
-             
-             return false
-             }
-             else if string == "" {
-             if rutTmp.length > 9 {
-             txtRUT.text = txtRUT.text?.replacingOccurrences(of: "-", with: "")
-             txtRUT.text = txtRUT.text?.dropLast().description
-             let lastCh = txtRUT.text?.last
-             let textTmp = txtRUT.text?.dropLast()
-             txtRUT.text = "\(textTmp!)-\(lastCh!)"
-             
-             return false
-             }else if rutTmp.length == 9 {
-             txtRUT.text = txtRUT.text?.dropLast().description
-             txtRUT.text = txtRUT.text?.replacingOccurrences(of: "-", with: "")
-             return false
-             }
-             }
-             }*/
         }
         
         let newString = (textField.text! as NSString).replacingCharacters(in: range, with: string) as String
@@ -196,13 +163,13 @@ public class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, Linkeabl
         return true
     }
     
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+    private func textFieldShouldClear(_ textField: UITextField) -> Bool {
         self.habilitarRecuperar()
         return true
     }
     
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    private func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == txtRUT.textField {
             let IdentificationNumber = txtRUT.textField.text!
             let maskedString = IdentificationNumber.enmascararRut()
@@ -237,10 +204,6 @@ public class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, Linkeabl
         }
         
         if (true == self.txtRUT.textField.text!.isEmpty) {
-            /*let alerta = AlertAcceptOnly();
-             alerta.text = NSLocalizedString("empty-fields".localized, comment: "");
-             NotificationCenter.default.post(name: Observers.ObserverList.AcceptOnlyAlert.name,
-             object: alerta);*/
             txtRUT.mandatoryInformation.displayView(customString: conf?.translations?.data?.generales?.emptyField)
             AnalyticsInteractionSingleton.sharedInstance.ADBTrackViewRecoveryPass(viewName: "Recuperar contrasena|Paso 1|Ingresar RUT|Detenido",type:1, detenido: true, mensaje: conf?.translations?.data?.generales?.emptyField)
             return;
@@ -251,10 +214,6 @@ public class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, Linkeabl
         }
         
         if let errorString = self.txtRUT.textField.text?.enmascararRut().errorString {
-            /*let alert = AlertAcceptOnly();
-             alert.title = "error-title-response".localized;
-             alert.text = errorString;
-             NotificationCenter.default.post(name: Observers.ObserverList.AcceptOnlyAlert.name, object: alert);*/
             txtRUT.mandatoryInformation.displayView(customString: errorString)
             AnalyticsInteractionSingleton.sharedInstance.ADBTrackViewRecoveryPass(viewName: "Recuperar contrasena|Paso 1|Ingresar RUT|Detenido",type:1, detenido: true, mensaje: errorString)
             return
@@ -274,7 +233,9 @@ public class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, Linkeabl
                                                         let acceptEvent = {
                                                             let vcRecovery = CodeRecoveryPasswordVC()
                                                             vcRecovery.setGTP(gtpr: req);
-                                                            vcRecovery.setGTPResult(gtprr: result);
+                                                            vcRecovery.setGTPResult(gtprr: result)
+                                                            vcRecovery.homeVC = self.homeVC
+                                                            vcRecovery.doAutomaticLogin = self.doAutomaticLogin
                                                             self.navigationController?.setNavigationBarHidden(false, animated: true)
                                                             self.navigationController?.pushViewController(vcRecovery, animated: true)
                                                             AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Recuperar contrasena|Paso 2|Mensaje enviado:Cerrar")
