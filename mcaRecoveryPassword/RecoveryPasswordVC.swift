@@ -13,9 +13,15 @@ import Cartography
 import SkyFloatingLabelTextField
 
 public class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, LinkeableEventDelegate {
+    public func ClickedBoldText() {
+    }
+    
+    public func ClickedNormalText() {
+    }
+    
     
     private let conf = mcaManagerSession.getGeneralConfig()
-    private var nextBtn: RedBorderWhiteBackgroundButton!//GreenBorderWhiteBackgroundButton!
+    private var nextBtn: RedBorderWhiteBackgroundButton!
     private var txtRUT : UITextFieldGroup = UITextFieldGroup(frame: .zero)
     private var lbOlvidasteMail : LinkableLabel?;
     private var termsAndConditions : TermsAndConditions = TermsAndConditions(frame: .zero)
@@ -55,7 +61,9 @@ public class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, Linkeabl
         let parte2 = conf?.translations?.data?.generales?.termsAndConditions ?? "";
         let parte3 = conf?.translations?.data?.registro?.registerTyCFinal ?? "";
         let strTerminosYCondiciones = String(format: "%@ <b>%@</b> %@", parte1, parte2, parte3);
-        termsAndConditions.setContent(strTerminosYCondiciones)
+        termsAndConditions.setContent(strTerminosYCondiciones, url: mcaManagerSession.getGeneralConfig()?.termsAndConditions?.url ?? "", title: mcaManagerSession.getGeneralConfig()?.translations?.data?.generales?.termsAndConditions ?? "", acceptTitle: mcaManagerSession.getGeneralConfig()?.translations?.data?.generales?.closeBtn ?? "", offlineAction: {
+            mcaManagerSession.showOfflineMessage()
+        })
         
         termsAndConditions.checkBox.addTarget(self, action: #selector(habilitarRecuperar), for: .touchUpInside)
         viewContainer.addSubview(termsAndConditions)
@@ -119,13 +127,6 @@ public class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, Linkeabl
         self.initWith(navigationType: .IconBack, headerTitle: conf?.translations?.data?.passwordRecovery?.header ?? "")
         
         AnalyticsInteractionSingleton.sharedInstance.ADBTrackViewRecoveryPass(viewName: "Recuperar contrasena|Paso 1|Ingresar RUT",type:1, detenido: false)
-    }
-    
-    public func ClickedBoldText() {
-    }
-    
-    public func ClickedNormalText() {
-//        piprself.navigationController?.replaceTopViewController(with: PrepaidRegisterDataVC(), animated: true);
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
