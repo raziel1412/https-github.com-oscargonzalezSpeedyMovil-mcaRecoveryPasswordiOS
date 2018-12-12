@@ -10,10 +10,7 @@ import UIKit
 
 open class mcaRecoveryPasswordManager: NSObject {
     
-    open class func initRecoveryPassword(navController: UINavigationController?, homeVC: UIViewController?, automaticLogin: Bool) {
-        let recoveryPassword = RecoveryPasswordVC()
-        recoveryPassword.homeVC = homeVC
-        recoveryPassword.doAutomaticLogin = automaticLogin
+    open class func launchModule(navController: UINavigationController?) {
         navController?.pushViewController(RecoveryPasswordVC(), animated: true);
     }
     

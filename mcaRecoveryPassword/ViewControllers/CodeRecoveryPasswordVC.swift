@@ -10,12 +10,10 @@ import UIKit
 import mcaUtilsiOS
 import mcaManageriOS
 import Cartography
+import mcaHomeiOS
 
 // Clase encargada de mostrar la vista para ingresar el código de recuperación de la contraseña
 class CodeRecoveryPasswordVC: UIViewController, LinkeableEventDelegate {
-    
-    var homeVC: UIViewController?
-    var doAutomaticLogin: Bool = false
     
     /// Variable que almacena el objeto GetTempPasswordRequest
     var gtpRequest : GetTempPasswordRequest?
@@ -124,7 +122,7 @@ class CodeRecoveryPasswordVC: UIViewController, LinkeableEventDelegate {
         if let gConfig = mcaManagerSession.getGeneralConfig(), let config = gConfig.config, let tryOuts = config.triesForPasswordRecovery {
             self.tryOutNumbers = tryOuts
         }
-        self.initWith(navigationType: .IconBack, headerTitle: conf?.translations?.data?.passwordRecovery?.header ?? "")
+        self.initWith(navigationType: ButtonNavType.IconBack, headerTitle: conf?.translations?.data?.passwordRecovery?.header ?? "")
     }
     /// Función depreciada
     func lnkTerminos_OnClick(sender: Any) {
@@ -170,7 +168,7 @@ class CodeRecoveryPasswordVC: UIViewController, LinkeableEventDelegate {
         mcaManagerServer.executeValidateTempPassword(params: req,
                                                            onSuccess: { [req] (result) in
                                                             self.tryAttemps = 1
-                                                            let rpcp = RecoverPasswordConfirmPasswordVC();
+                                                            let rpcp = RecoverPasswordConfirmPasswordVC()
                                                             rpcp.setVTPR(value: req);
                                                             self.navigationController?.pushViewController(rpcp, animated: true);
             },

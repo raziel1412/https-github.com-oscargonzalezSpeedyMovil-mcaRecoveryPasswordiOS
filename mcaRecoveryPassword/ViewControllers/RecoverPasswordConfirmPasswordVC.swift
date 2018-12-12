@@ -10,12 +10,10 @@ import UIKit
 import Cartography
 import mcaUtilsiOS
 import mcaManageriOS
+import mcaHomeiOS
 
 /// Clase para mostrar la vista de confirmar passowrd
 class RecoverPasswordConfirmPasswordVC: UIViewController, UITextFieldDelegate {
-    
-    var homeVC: UIViewController?
-    var doAutomaticLogin: Bool = false
     
     /// ValidateTempPasswordRequest
     var vtpr : ValidateTempPasswordRequest?
@@ -163,13 +161,8 @@ class RecoverPasswordConfirmPasswordVC: UIViewController, UITextFieldDelegate {
             mcaManagerServer.executeUpdatePassword(params: req,
                                                          onSuccess: { (result) in
                                                            let onAcceptEvent = {
-                                                            if self.doAutomaticLogin {
-                                                                self.automaticLogin()
-                                                            } else {
-                                                                self.navigationController?.popToRootViewController(animated: true)
-                                                            }
-                                                            
-                                                                AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Recuperar contrasena|Exito:Cerrar")
+                                                            self.navigationController?.popToRootViewController(animated: true)
+                                                            AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Recuperar contrasena|Exito:Cerrar")
                                                             }
                                                             
                                                             GeneralAlerts.showAcceptOnly(title: self.conf?.translations?.data?.passwordRecovery?.recoverySuccessTitle ?? "¡Cambio de Contraseña Exitoso!", text: result.0.updatePasswordResponse?.acknowledgementDescription ?? "", icon: .IconoFelicidadesContraseñaCambiada, acceptBtnColor: institutionalColors.claroBlueColor, buttonName: self.conf?.translations?.data?.generales?.closeBtn ?? "", onAcceptEvent: onAcceptEvent)
@@ -208,7 +201,7 @@ class RecoverPasswordConfirmPasswordVC: UIViewController, UITextFieldDelegate {
                                                                  onSuccess: { (result) in
                                                                     print(result);
                                                                     DispatchQueue.main.async(execute: {
-                                                                        UIApplication.shared.keyWindow?.rootViewController  = self.homeVC
+                                                                        UIApplication.shared.keyWindow?.rootViewController  = HomeVC()
                                                                     })
         },
                                                                  onFailure: { (result, myError) in

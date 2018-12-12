@@ -12,7 +12,7 @@ import mcaUtilsiOS
 import Cartography
 import SkyFloatingLabelTextField
 
-open class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, LinkeableEventDelegate {
+class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, LinkeableEventDelegate {
     
     public func ClickedBoldText() {
     }
@@ -116,16 +116,16 @@ open class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, LinkeableE
     }
     
     
-    override open func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         setupElements()
     }
     
-    override open func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    override open func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         self.initWith(navigationType: .IconBack, headerTitle: conf?.translations?.data?.passwordRecovery?.header ?? "")
         
@@ -234,8 +234,6 @@ open class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, LinkeableE
                                                             let vcRecovery = CodeRecoveryPasswordVC()
                                                             vcRecovery.setGTP(gtpr: req);
                                                             vcRecovery.setGTPResult(gtprr: result)
-                                                            vcRecovery.homeVC = self.homeVC
-                                                            vcRecovery.doAutomaticLogin = self.doAutomaticLogin
                                                             self.navigationController?.setNavigationBarHidden(false, animated: true)
                                                             self.navigationController?.pushViewController(vcRecovery, animated: true)
                                                             AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Recuperar contrasena|Paso 2|Mensaje enviado:Cerrar")
