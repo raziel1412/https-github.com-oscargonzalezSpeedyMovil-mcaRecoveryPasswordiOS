@@ -197,7 +197,7 @@ class RecoverPasswordConfirmPasswordVC: UIViewController, UITextFieldDelegate {
         req.retrieveProfileInformation?.lineOfBusiness = "0";
         req.retrieveProfileInformation?.userProfileId = vtpr?.validateTempPassword?.userProfileId
 
-        mcaManagerServer.executeRetrieveProfileInformation(lineOfBusiness: "0", userProfileId: vtpr?.validateTempPassword?.userProfileId ?? "",
+        mcaManagerServer.executeRetrieveProfileInformation(params: req,
                                                                  onSuccess: { (result) in
                                                                     print(result);
                                                                     DispatchQueue.main.async(execute: {

@@ -177,10 +177,6 @@ class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, LinkeableEventD
                 txtRUT.textField.text = maskedString.maskedString
             }
             if let errorString = maskedString.errorString {
-                /*let alert = AlertAcceptOnly();
-                 alert.title = "error-title-response".localized;
-                 alert.text = errorString;
-                 NotificationCenter.default.post(name: Observers.ObserverList.AcceptOnlyAlert.name, object: alert);*/
                 txtRUT.mandatoryInformation.displayView(customString: errorString)
             }
             else{
