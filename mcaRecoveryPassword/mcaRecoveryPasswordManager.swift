@@ -14,6 +14,12 @@ open class mcaRecoveryPasswordManager: NSObject {
         navController?.pushViewController(RecoveryPasswordVC(), animated: true);
     }
     
+    open class func launch(navController: UINavigationController?, doLoginWhenFinish: @escaping ((_ doutomaticLogin: Bool) -> Void)) {
+        let recoveryPasswordVC = RecoveryPasswordVC()
+        recoveryPasswordVC.doLoginWhenFinish = doLoginWhenFinish
+        navController?.pushViewController(recoveryPasswordVC, animated: true)
+    }
+    
     open class func findPasswordRecoveryVC(navigation: UINavigationController?) -> UIViewController? {
         if let viewControllers = navigation?.viewControllers {
             for viewController in viewControllers {
@@ -24,5 +30,7 @@ open class mcaRecoveryPasswordManager: NSObject {
         }
         return nil
     }
+    
+    
 
 }

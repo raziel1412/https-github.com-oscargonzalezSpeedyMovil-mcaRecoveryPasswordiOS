@@ -14,6 +14,8 @@ import SkyFloatingLabelTextField
 
 class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, LinkeableEventDelegate {
     
+    var doLoginWhenFinish :((_ doAutomaticLogin: Bool) -> Void) = {_ in }
+    
     public func ClickedBoldText() {
     }
     
@@ -228,6 +230,7 @@ class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, LinkeableEventD
                                                         
                                                         let acceptEvent = {
                                                             let vcRecovery = CodeRecoveryPasswordVC()
+                                                            vcRecovery.doLoginWhenFinish = self.doLoginWhenFinish
                                                             vcRecovery.setGTP(gtpr: req);
                                                             vcRecovery.setGTPResult(gtprr: result)
                                                             self.navigationController?.setNavigationBarHidden(false, animated: true)

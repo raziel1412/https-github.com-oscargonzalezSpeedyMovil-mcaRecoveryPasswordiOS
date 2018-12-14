@@ -10,10 +10,11 @@ import UIKit
 import mcaUtilsiOS
 import mcaManageriOS
 import Cartography
-import mcaHomeiOS
 
 // Clase encargada de mostrar la vista para ingresar el código de recuperación de la contraseña
 class CodeRecoveryPasswordVC: UIViewController, LinkeableEventDelegate {
+    
+    var doLoginWhenFinish :((_ doAutomaticLogin: Bool) -> Void) = {_ in }
     
     /// Variable que almacena el objeto GetTempPasswordRequest
     var gtpRequest : GetTempPasswordRequest?
@@ -169,6 +170,7 @@ class CodeRecoveryPasswordVC: UIViewController, LinkeableEventDelegate {
                                                            onSuccess: { [req] (result) in
                                                             self.tryAttemps = 1
                                                             let rpcp = RecoverPasswordConfirmPasswordVC()
+                                                            rpcp.doLoginWhenFinish = self.doLoginWhenFinish
                                                             rpcp.setVTPR(value: req);
                                                             self.navigationController?.pushViewController(rpcp, animated: true);
             },

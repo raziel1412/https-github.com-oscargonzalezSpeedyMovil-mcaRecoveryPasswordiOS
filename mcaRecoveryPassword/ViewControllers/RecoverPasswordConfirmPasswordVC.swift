@@ -10,10 +10,11 @@ import UIKit
 import Cartography
 import mcaUtilsiOS
 import mcaManageriOS
-import mcaHomeiOS
 
 /// Clase para mostrar la vista de confirmar passowrd
 class RecoverPasswordConfirmPasswordVC: UIViewController, UITextFieldDelegate {
+    
+    var doLoginWhenFinish :((_ doAutomaticLogin: Bool) -> Void) = {_ in }
     
     /// ValidateTempPasswordRequest
     var vtpr : ValidateTempPasswordRequest?
@@ -201,7 +202,7 @@ class RecoverPasswordConfirmPasswordVC: UIViewController, UITextFieldDelegate {
                                                                  onSuccess: { (result) in
                                                                     print(result);
                                                                     DispatchQueue.main.async(execute: {
-                                                                        UIApplication.shared.keyWindow?.rootViewController  = HomeVC()
+                                                                        self.didFinishModuleDoingAutomaticLogin()
                                                                     })
         },
                                                                  onFailure: { (result, myError) in
@@ -209,6 +210,11 @@ class RecoverPasswordConfirmPasswordVC: UIViewController, UITextFieldDelegate {
                                                                     GeneralAlerts.showAcceptOnly(title: "404-response-profile-information", icon: .IconoAlertaError, onAcceptEvent: {})
 
         });
+    }
+    
+    /// callback of VC that launch current module
+    func didFinishModuleDoingAutomaticLogin() {
+        doLoginWhenFinish(true)
     }
 
     /// Touches began
