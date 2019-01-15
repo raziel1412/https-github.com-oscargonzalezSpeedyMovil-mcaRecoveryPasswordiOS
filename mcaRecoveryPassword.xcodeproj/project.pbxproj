@@ -6,7 +6,24 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		1D03791E21ECF63800F70AF5 /* mcaRecoveryPasswordUniversal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1D03792121ECF63800F70AF5 /* Build configuration list for PBXAggregateTarget "mcaRecoveryPasswordUniversal" */;
+			buildPhases = (
+				1D03795521ECF80200F70AF5 /* ShellScript */,
+				1D0379F321ED406700F70AF5 /* CopyFiles */,
+			);
+			dependencies = (
+			);
+			name = mcaRecoveryPasswordUniversal;
+			productName = mcaRecoveryPasswordUniversal;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
+		1D0378E321E92B0100F70AF5 /* mcaManageriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0378E221E92B0100F70AF5 /* mcaManageriOS.framework */; };
+		1D0379F421ED407100F70AF5 /* Pods_mcaRecoveryPassword.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EE89D794A517EEC995BFB1 /* Pods_mcaRecoveryPassword.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D1E497521B5E61A007C61B1 /* mcaRecoveryPassword.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D1E497321B5E61A007C61B1 /* mcaRecoveryPassword.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D1E49D621B9DC3B007C61B1 /* RecoveryPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E49D321B9DC3A007C61B1 /* RecoveryPasswordVC.swift */; };
 		1D1E49D721B9DC3B007C61B1 /* RecoverPasswordConfirmPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E49D421B9DC3A007C61B1 /* RecoverPasswordConfirmPasswordVC.swift */; };
@@ -15,7 +32,21 @@
 		7FCF4230D9FAC1899886B11D /* Pods_mcaRecoveryPassword.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5EE89D794A517EEC995BFB1 /* Pods_mcaRecoveryPassword.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1D0379F321ED406700F70AF5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1D0379F421ED407100F70AF5 /* Pods_mcaRecoveryPassword.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1D0378E221E92B0100F70AF5 /* mcaManageriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = mcaManageriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1E497021B5E61A007C61B1 /* mcaRecoveryPassword.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mcaRecoveryPassword.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1E497321B5E61A007C61B1 /* mcaRecoveryPassword.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mcaRecoveryPassword.h; sourceTree = "<group>"; };
 		1D1E497421B5E61A007C61B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D0378E321E92B0100F70AF5 /* mcaManageriOS.framework in Frameworks */,
 				7FCF4230D9FAC1899886B11D /* Pods_mcaRecoveryPassword.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +114,7 @@
 		7B50063A96F21F99B6A0D89E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D0378E221E92B0100F70AF5 /* mcaManageriOS.framework */,
 				B5EE89D794A517EEC995BFB1 /* Pods_mcaRecoveryPassword.framework */,
 			);
 			name = Frameworks;
@@ -119,7 +152,7 @@
 				1D1E496C21B5E61A007C61B1 /* Sources */,
 				1D1E496D21B5E61A007C61B1 /* Frameworks */,
 				1D1E496E21B5E61A007C61B1 /* Resources */,
-				FA8A0CCADC2B89A0676D7646 /* [CP] Copy Pods Resources */,
+				3DD94D17CB6233B4ABB4F372 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -139,6 +172,9 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Speedy Movil";
 				TargetAttributes = {
+					1D03791E21ECF63800F70AF5 = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					1D1E496F21B5E61A007C61B1 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
@@ -158,6 +194,7 @@
 			projectRoot = "";
 			targets = (
 				1D1E496F21B5E61A007C61B1 /* mcaRecoveryPassword */,
+				1D03791E21ECF63800F70AF5 /* mcaRecoveryPasswordUniversal */,
 			);
 		};
 /* End PBXProject section */
@@ -191,7 +228,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FA8A0CCADC2B89A0676D7646 /* [CP] Copy Pods Resources */ = {
+		1D03795521ECF80200F70AF5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\nPROD_NAME=mcaRecoveryPassword\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${PROD_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Copy the framework structure to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROD_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\nif [ \"${SIMULATOR_AVAILABLE}\" = \"true\" ]; then\nxcodebuild -target \"${PROD_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n\n# Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROD_NAME}.framework/Modules/${PROD_NAME}.swiftmodule/.\"\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROD_NAME}.framework/Modules/${PROD_NAME}.swiftmodule\"\nfi\n\n# Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROD_NAME}.framework/${PROD_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROD_NAME}.framework/${PROD_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROD_NAME}.framework/${PROD_NAME}\"\n\n# Open the Universal output folder for convenience\n# open \"${UNIVERSAL_OUTPUTFOLDER}\"\nfi\n\n\n\n";
+		};
+		3DD94D17CB6233B4ABB4F372 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -230,6 +284,26 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		1D03791F21ECF63800F70AF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 241C21F9D41ACB29E3E916D8 /* Pods-mcaRecoveryPassword.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 85E3H648RA;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1D03792021ECF63800F70AF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEA6634A4CFD050AB7599274 /* Pods-mcaRecoveryPassword.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 85E3H648RA;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		1D1E497621B5E61A007C61B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -356,14 +430,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 241C21F9D41ACB29E3E916D8 /* Pods-mcaRecoveryPassword.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 85E3H648RA;
+				DEVELOPMENT_TEAM = 44W73F6DDD;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = mcaRecoveryPassword/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -372,6 +448,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.miclaro.app.mcaRecoveryPassword;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -386,14 +463,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AEA6634A4CFD050AB7599274 /* Pods-mcaRecoveryPassword.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 85E3H648RA;
+				DEVELOPMENT_TEAM = 44W73F6DDD;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = mcaRecoveryPassword/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -414,6 +493,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1D03792121ECF63800F70AF5 /* Build configuration list for PBXAggregateTarget "mcaRecoveryPasswordUniversal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D03791F21ECF63800F70AF5 /* Debug */,
+				1D03792021ECF63800F70AF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1D1E496A21B5E61A007C61B1 /* Build configuration list for PBXProject "mcaRecoveryPassword" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
