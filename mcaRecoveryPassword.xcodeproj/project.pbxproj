@@ -152,7 +152,7 @@
 				1D1E496C21B5E61A007C61B1 /* Sources */,
 				1D1E496D21B5E61A007C61B1 /* Frameworks */,
 				1D1E496E21B5E61A007C61B1 /* Resources */,
-				8A4E2D806E8C0FEE7398762D /* [CP] Copy Pods Resources */,
+				861966FCC0241796AFFF34A7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -241,20 +241,18 @@
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/sh\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\nPROD_NAME=mcaRecoveryPassword\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${PROD_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Copy the framework structure to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROD_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\nif [ \"${SIMULATOR_AVAILABLE}\" = \"true\" ]; then\nxcodebuild -target \"${PROD_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n\n# Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROD_NAME}.framework/Modules/${PROD_NAME}.swiftmodule/.\"\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROD_NAME}.framework/Modules/${PROD_NAME}.swiftmodule\"\nfi\n\n# Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROD_NAME}.framework/${PROD_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROD_NAME}.framework/${PROD_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROD_NAME}.framework/${PROD_NAME}\"\n\n# Open the Universal output folder for convenience\n# open \"${UNIVERSAL_OUTPUTFOLDER}\"\nfi\n\n\n\n";
 		};
-		8A4E2D806E8C0FEE7398762D /* [CP] Copy Pods Resources */ = {
+		861966FCC0241796AFFF34A7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${SRCROOT}/../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRecoveryPassword/Pods-mcaRecoveryPassword-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/IBMMobileFirstPlatformFoundation/IBMMobileFirstPlatformFoundation/Resources/Localizations.bundle",
 				"${PODS_ROOT}/khenshin/Products/khenshin.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Localizations.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/khenshin.bundle",
 			);
