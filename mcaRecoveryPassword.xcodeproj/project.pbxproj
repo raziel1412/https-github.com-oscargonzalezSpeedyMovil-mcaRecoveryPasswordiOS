@@ -22,14 +22,13 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		1D0379F421ED407100F70AF5 /* Pods_mcaRecoveryPassword.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5EE89D794A517EEC995BFB1 /* Pods_mcaRecoveryPassword.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D1E497521B5E61A007C61B1 /* mcaRecoveryPassword.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D1E497321B5E61A007C61B1 /* mcaRecoveryPassword.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D1E49D621B9DC3B007C61B1 /* RecoveryPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E49D321B9DC3A007C61B1 /* RecoveryPasswordVC.swift */; };
 		1D1E49D721B9DC3B007C61B1 /* RecoverPasswordConfirmPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E49D421B9DC3A007C61B1 /* RecoverPasswordConfirmPasswordVC.swift */; };
 		1D1E49D821B9DC3B007C61B1 /* CodeRecoveryPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E49D521B9DC3A007C61B1 /* CodeRecoveryPasswordVC.swift */; };
 		1D1E49DA21B9E055007C61B1 /* mcaRecoveryPasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E49D921B9E055007C61B1 /* mcaRecoveryPasswordManager.swift */; };
-		1D373F0221F286F900168BF4 /* mcaManageriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D373F0121F286F900168BF4 /* mcaManageriOS.framework */; };
-		7FCF4230D9FAC1899886B11D /* Pods_mcaRecoveryPassword.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5EE89D794A517EEC995BFB1 /* Pods_mcaRecoveryPassword.framework */; };
+		1D8C3B9321F9354C005DBA39 /* mcaManageriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8C3B9221F9354C005DBA39 /* mcaManageriOS.framework */; };
+		1D8C3B9521F93552005DBA39 /* Pods_mcaRecoveryPassword.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8C3B9421F93552005DBA39 /* Pods_mcaRecoveryPassword.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,7 +38,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1D0379F421ED407100F70AF5 /* Pods_mcaRecoveryPassword.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,10 +51,10 @@
 		1D1E49D421B9DC3A007C61B1 /* RecoverPasswordConfirmPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoverPasswordConfirmPasswordVC.swift; sourceTree = "<group>"; };
 		1D1E49D521B9DC3A007C61B1 /* CodeRecoveryPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeRecoveryPasswordVC.swift; sourceTree = "<group>"; };
 		1D1E49D921B9E055007C61B1 /* mcaRecoveryPasswordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mcaRecoveryPasswordManager.swift; sourceTree = "<group>"; };
-		1D373F0121F286F900168BF4 /* mcaManageriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = mcaManageriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D8C3B9221F9354C005DBA39 /* mcaManageriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = mcaManageriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D8C3B9421F93552005DBA39 /* Pods_mcaRecoveryPassword.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_mcaRecoveryPassword.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		241C21F9D41ACB29E3E916D8 /* Pods-mcaRecoveryPassword.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mcaRecoveryPassword.debug.xcconfig"; path = "../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRecoveryPassword/Pods-mcaRecoveryPassword.debug.xcconfig"; sourceTree = "<group>"; };
 		AEA6634A4CFD050AB7599274 /* Pods-mcaRecoveryPassword.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mcaRecoveryPassword.release.xcconfig"; path = "../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRecoveryPassword/Pods-mcaRecoveryPassword.release.xcconfig"; sourceTree = "<group>"; };
-		B5EE89D794A517EEC995BFB1 /* Pods_mcaRecoveryPassword.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mcaRecoveryPassword.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D373F0221F286F900168BF4 /* mcaManageriOS.framework in Frameworks */,
-				7FCF4230D9FAC1899886B11D /* Pods_mcaRecoveryPassword.framework in Frameworks */,
+				1D8C3B9521F93552005DBA39 /* Pods_mcaRecoveryPassword.framework in Frameworks */,
+				1D8C3B9321F9354C005DBA39 /* mcaManageriOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,8 +112,8 @@
 		7B50063A96F21F99B6A0D89E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1D373F0121F286F900168BF4 /* mcaManageriOS.framework */,
-				B5EE89D794A517EEC995BFB1 /* Pods_mcaRecoveryPassword.framework */,
+				1D8C3B9421F93552005DBA39 /* Pods_mcaRecoveryPassword.framework */,
+				1D8C3B9221F9354C005DBA39 /* mcaManageriOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,7 +150,7 @@
 				1D1E496C21B5E61A007C61B1 /* Sources */,
 				1D1E496D21B5E61A007C61B1 /* Frameworks */,
 				1D1E496E21B5E61A007C61B1 /* Resources */,
-				861966FCC0241796AFFF34A7 /* [CP] Copy Pods Resources */,
+				5C72F09692D9E230DBCAD357 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -241,7 +239,7 @@
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/sh\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\nPROD_NAME=mcaRecoveryPassword\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${PROD_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Copy the framework structure to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROD_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\nif [ \"${SIMULATOR_AVAILABLE}\" = \"true\" ]; then\nxcodebuild -target \"${PROD_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n\n# Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROD_NAME}.framework/Modules/${PROD_NAME}.swiftmodule/.\"\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROD_NAME}.framework/Modules/${PROD_NAME}.swiftmodule\"\nfi\n\n# Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROD_NAME}.framework/${PROD_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROD_NAME}.framework/${PROD_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROD_NAME}.framework/${PROD_NAME}\"\n\n# Open the Universal output folder for convenience\n# open \"${UNIVERSAL_OUTPUTFOLDER}\"\nfi\n\n\n\n";
 		};
-		861966FCC0241796AFFF34A7 /* [CP] Copy Pods Resources */ = {
+		5C72F09692D9E230DBCAD357 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -434,7 +432,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 241C21F9D41ACB29E3E916D8 /* Pods-mcaRecoveryPassword.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -468,7 +465,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AEA6634A4CFD050AB7599274 /* Pods-mcaRecoveryPassword.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
