@@ -221,36 +221,69 @@ class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, LinkeableEventD
             return
         }
         
+        let passwordReq = RetrieveProfileInformationRequest();
+        passwordReq.retrieveProfileInformation?.lineOfBusiness = "0";
+        passwordReq.retrieveProfileInformation?.userProfileId = self.txtRUT.textField.text!//.enmascararRut();
+        
+        var userEmail = ""
+        var userPhone = ""
+        
         let req = GetTempPasswordRequest()
         req.getTempPassword?.userProfileId = txtRUT.textField.text!//.enmascararRut();
         req.getTempPassword?.lineOfBusiness = "0";
         mcaManagerServer.executeGetTempPassword(params: req,
-                                                      onSuccess: { [req] (result : GetTempPasswordResult, resultType : ResultType) in
-                                                        let msgCode = self.conf?.translations?.data?.generales?.pinAlert ?? "PIN"
+                        onSuccess: { [req] (result : GetTempPasswordResult, resultType : ResultType) in
+                                let msgCode = self.conf?.translations?.data?.generales?.pinAlert ?? "PIN"
                                                         
-                                                        let acceptEvent = {
-                                                            let vcRecovery = CodeRecoveryPasswordVC()
-                                                            vcRecovery.doLoginWhenFinish = self.doLoginWhenFinish
-                                                            vcRecovery.setGTP(gtpr: req);
-                                                            vcRecovery.setGTPResult(gtprr: result)
-                                                            self.navigationController?.setNavigationBarHidden(false, animated: true)
-                                                            self.navigationController?.pushViewController(vcRecovery, animated: true)
-                                                            AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Recuperar contrasena|Paso 2|Mensaje enviado:Cerrar")
-                                                        }
+                                mcaManagerServer.executeRetrieveProfileInformation(params: passwordReq,
+                                                onSuccess: {(resultRPI, resultType) in
+                                                                                                                    
+                                                    userEmail = resultRPI.retrieveProfileInformationResponse?.contactMethods?[0].emailContactMethodDetail?.emailAddress ?? ""
+                                                                                                                    
+                                                    userPhone = resultRPI.retrieveProfileInformationResponse?.contactMethods?[0].mobileContactMethodDetail?.mobileNumber ?? ""
+                                                                                                                 
+                                                    let onAcceptEvent = {
+                                                        let vcRecovery = CodeRecoveryPasswordVC()
+                                                        //IMPORTANTE ISAI Verificar la siguiente linea si va o no
+//                                                        vcRecovery.doLoginWhenFinish = self.doLoginWhenFinish
+                                                        vcRecovery.setGTP(gtpr: req);
+                                                        vcRecovery.setGTPResult(gtprr: result);
                                                         
-                                                        GeneralAlerts.showAcceptOnly(title:self.conf?.translations?.data?.generales?.pinAlertTitle ?? "", text: msgCode, icon: .IconoCodigoDeVerificacionDeTexto, acceptBtnColor: institutionalColors.claroBlueColor, buttonName: self.conf?.translations?.data?.generales?.closeBtn ?? "", onAcceptEvent: acceptEvent)
+                                                        self.navigationController?.setNavigationBarHidden(false, animated: true)
                                                         
-                                                        AnalyticsInteractionSingleton.sharedInstance.ADBTrackViewRecoveryPass(viewName: "Recuperar contrasena|Paso 2|Mensaje enviado",type:2, detenido: false)
-                                                        AnalyticsInteractionSingleton.sharedInstance.initTimer()
+                                                        self.navigationController?.pushViewController(vcRecovery, animated: true)
                                                         
-                                                        
-            },
-                                                      onFailure: { (result, myError) in
-                                                        GeneralAlerts.showAcceptOnly(text: result?.getTempPasswordResponse?.acknowledgementDescription ?? "", icon: AlertIconType.IconoAlertaError, acceptTitle: self.conf?.translations?.data?.generales?.closeBtn ?? "", onAcceptEvent: {})
-                                                        
-        });
+                                                        AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Recuperar contrasena|Paso 2|Mensaje enviado:Cerrar")
+                                                    }
+                                                                                                    
+                                                    GeneralAlerts.showAcceptOnlyPassword(title:  self.conf?.translations?.data?.generales?.pinAlertTitle ?? "", text: msgCode, userEmail: userEmail.maskAsEmail(), userPhone: userPhone.maskAsPhone(), acceptTitle: self.conf?.translations?.data?.generales?.closeBtn ?? "", icon: .IconoCodigoDeVerificacionDeTexto, acceptColorBtn: institutionalColors.claroBlueColor, onAcceptEvent: onAcceptEvent)
+                                                                                                                   
+                                                    
+                                                    //traer la informacion de alerta crear registros en entidades
+                                                    //se procede a borrar
+                                                    mcaManagerSession.clearCacheData() //self.appDelegate.killEntities()
+                                                                                                                    
+                                                    AnalyticsInteractionSingleton.sharedInstance.ADBTrackViewRecoveryPass(viewName: "Recuperar contrasena|Paso 2|Mensaje enviado",type:2, detenido: false)
+                                                    
+                                                    AnalyticsInteractionSingleton.sharedInstance.initTimer()
+                                                                                                                    
+                                                }, onFailure: {(result, error) in
+                                                            //            let alertInfo = AlertAcceptOnly()
+                                                            //            alertInfo.acceptTitle = self.conf?.translations?.data?.generales?.closeBtn ?? ""
+                                                            //            alertInfo.text = (result?.retrieveProfileInformationResponse?.acknowledgementDescription?.description)!
+                                                            //            alertInfo.icon = AlertIconType.IconoAlertaError
+                                                            //            alertInfo.onAcceptEvent = {}
+                                                            //            NotificationCenter.default.post(name: Observers.ObserverList.AcceptOnlyAlert.name,
+                                                            //                                            object: alertInfo)
+                                                            print("Entro a FALLA ISAI")
+                                                })
         
-        
+                            },
+                            onFailure: { (result, myError) in
+                                    GeneralAlerts.showAcceptOnly(text: result?.getTempPasswordResponse?.acknowledgementDescription ?? "", icon: AlertIconType.IconoAlertaError, acceptTitle: self.conf?.translations?.data?.generales?.closeBtn ?? "", onAcceptEvent: {})
+                                                        
+                            });
+    
     }
     
     func habilitarRecuperar() {
