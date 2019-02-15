@@ -12,7 +12,6 @@
 			buildConfigurationList = 1D03792121ECF63800F70AF5 /* Build configuration list for PBXAggregateTarget "mcaRecoveryPasswordUniversal" */;
 			buildPhases = (
 				1D03795521ECF80200F70AF5 /* ShellScript */,
-				1D809EAB2214E94F00DF5303 /* CopyFiles */,
 			);
 			dependencies = (
 			);
@@ -27,34 +26,9 @@
 		1D1E49D721B9DC3B007C61B1 /* RecoverPasswordConfirmPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E49D421B9DC3A007C61B1 /* RecoverPasswordConfirmPasswordVC.swift */; };
 		1D1E49D821B9DC3B007C61B1 /* CodeRecoveryPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E49D521B9DC3A007C61B1 /* CodeRecoveryPasswordVC.swift */; };
 		1D1E49DA21B9E055007C61B1 /* mcaRecoveryPasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E49D921B9E055007C61B1 /* mcaRecoveryPasswordManager.swift */; };
-		1D809EAC2214E95600DF5303 /* BuildFile in CopyFiles */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1D809ED02215CB6400DF5303 /* BuildFile in CopyFiles */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D8C3B9321F9354C005DBA39 /* mcaManageriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8C3B9221F9354C005DBA39 /* mcaManageriOS.framework */; };
-		7F3DB77231E93BC72BC3B225 /* Pods_mcaRecoveryPassword.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FDE98D877549E2566B7BA95 /* Pods_mcaRecoveryPassword.framework */; };
+		30B264EF388B9B3BE2E51AF1 /* Pods_mcaRecoveryPassword.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34CF582FCB257BED4B4A55E8 /* Pods_mcaRecoveryPassword.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		1D809EAB2214E94F00DF5303 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				1D809EAC2214E95600DF5303 /* BuildFile in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1D809ECF2215CB5C00DF5303 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				1D809ED02215CB6400DF5303 /* BuildFile in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1D1E497021B5E61A007C61B1 /* mcaRecoveryPassword.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mcaRecoveryPassword.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,9 +39,9 @@
 		1D1E49D521B9DC3A007C61B1 /* CodeRecoveryPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeRecoveryPasswordVC.swift; sourceTree = "<group>"; };
 		1D1E49D921B9E055007C61B1 /* mcaRecoveryPasswordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mcaRecoveryPasswordManager.swift; sourceTree = "<group>"; };
 		1D8C3B9221F9354C005DBA39 /* mcaManageriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = mcaManageriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		55C62F5337F60F1EBF7823AB /* Pods-mcaRecoveryPassword.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mcaRecoveryPassword.release.xcconfig"; path = "../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRecoveryPassword/Pods-mcaRecoveryPassword.release.xcconfig"; sourceTree = "<group>"; };
-		7FDE98D877549E2566B7BA95 /* Pods_mcaRecoveryPassword.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mcaRecoveryPassword.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F242CD00B5386571AE2084C3 /* Pods-mcaRecoveryPassword.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mcaRecoveryPassword.debug.xcconfig"; path = "../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRecoveryPassword/Pods-mcaRecoveryPassword.debug.xcconfig"; sourceTree = "<group>"; };
+		34CF582FCB257BED4B4A55E8 /* Pods_mcaRecoveryPassword.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mcaRecoveryPassword.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB277DA7B9FFAA454C926348 /* Pods-mcaRecoveryPassword.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mcaRecoveryPassword.release.xcconfig"; path = "../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRecoveryPassword/Pods-mcaRecoveryPassword.release.xcconfig"; sourceTree = "<group>"; };
+		CB6E5972937037037C204552 /* Pods-mcaRecoveryPassword.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mcaRecoveryPassword.debug.xcconfig"; path = "../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRecoveryPassword/Pods-mcaRecoveryPassword.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +50,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D8C3B9321F9354C005DBA39 /* mcaManageriOS.framework in Frameworks */,
-				7F3DB77231E93BC72BC3B225 /* Pods_mcaRecoveryPassword.framework in Frameworks */,
+				30B264EF388B9B3BE2E51AF1 /* Pods_mcaRecoveryPassword.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +63,7 @@
 				1D1E497221B5E61A007C61B1 /* mcaRecoveryPassword */,
 				1D1E497121B5E61A007C61B1 /* Products */,
 				7B50063A96F21F99B6A0D89E /* Frameworks */,
-				99285315F0B99F25228BD35D /* Pods */,
+				58B98466BA73B0890B63BAFF /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,22 +96,22 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		58B98466BA73B0890B63BAFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB6E5972937037037C204552 /* Pods-mcaRecoveryPassword.debug.xcconfig */,
+				AB277DA7B9FFAA454C926348 /* Pods-mcaRecoveryPassword.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7B50063A96F21F99B6A0D89E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				1D8C3B9221F9354C005DBA39 /* mcaManageriOS.framework */,
-				7FDE98D877549E2566B7BA95 /* Pods_mcaRecoveryPassword.framework */,
+				34CF582FCB257BED4B4A55E8 /* Pods_mcaRecoveryPassword.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		99285315F0B99F25228BD35D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F242CD00B5386571AE2084C3 /* Pods-mcaRecoveryPassword.debug.xcconfig */,
-				55C62F5337F60F1EBF7823AB /* Pods-mcaRecoveryPassword.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,13 +132,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D1E497821B5E61A007C61B1 /* Build configuration list for PBXNativeTarget "mcaRecoveryPassword" */;
 			buildPhases = (
-				42834A309F0550B89E676900 /* [CP] Check Pods Manifest.lock */,
+				8B3297856327447CCBADCECC /* [CP] Check Pods Manifest.lock */,
 				1D1E496B21B5E61A007C61B1 /* Headers */,
 				1D1E496C21B5E61A007C61B1 /* Sources */,
 				1D1E496D21B5E61A007C61B1 /* Frameworks */,
 				1D1E496E21B5E61A007C61B1 /* Resources */,
-				1D809ECF2215CB5C00DF5303 /* CopyFiles */,
-				4A34B715ED79E134F4CC93CC /* [CP] Copy Pods Resources */,
+				7DE3DABB10E727F65E276A2E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,25 +208,7 @@
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/sh\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\nPROD_NAME=mcaRecoveryPassword\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${PROD_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Copy the framework structure to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROD_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\nif [ \"${SIMULATOR_AVAILABLE}\" = \"true\" ]; then\nxcodebuild -target \"${PROD_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n\n# Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROD_NAME}.framework/Modules/${PROD_NAME}.swiftmodule/.\"\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROD_NAME}.framework/Modules/${PROD_NAME}.swiftmodule\"\nfi\n\n# Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROD_NAME}.framework/${PROD_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROD_NAME}.framework/${PROD_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROD_NAME}.framework/${PROD_NAME}\"\n\n# Open the Universal output folder for convenience\n# open \"${UNIVERSAL_OUTPUTFOLDER}\"\nfi\n\n\n\n";
 		};
-		42834A309F0550B89E676900 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-mcaRecoveryPassword-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4A34B715ED79E134F4CC93CC /* [CP] Copy Pods Resources */ = {
+		7DE3DABB10E727F65E276A2E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -271,6 +226,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaRecoveryPassword/Pods-mcaRecoveryPassword-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B3297856327447CCBADCECC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mcaRecoveryPassword-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -440,7 +413,7 @@
 		};
 		1D1E497921B5E61A007C61B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F242CD00B5386571AE2084C3 /* Pods-mcaRecoveryPassword.debug.xcconfig */;
+			baseConfigurationReference = CB6E5972937037037C204552 /* Pods-mcaRecoveryPassword.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -472,7 +445,7 @@
 		};
 		1D1E497A21B5E61A007C61B1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55C62F5337F60F1EBF7823AB /* Pods-mcaRecoveryPassword.release.xcconfig */;
+			baseConfigurationReference = AB277DA7B9FFAA454C926348 /* Pods-mcaRecoveryPassword.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
