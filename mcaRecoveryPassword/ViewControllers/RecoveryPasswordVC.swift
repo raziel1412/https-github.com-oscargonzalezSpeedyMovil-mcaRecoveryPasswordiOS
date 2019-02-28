@@ -238,9 +238,9 @@ class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, LinkeableEventD
                                 mcaManagerServer.executeRetrieveProfileInformation(params: passwordReq,
                                                 onSuccess: {(resultRPI, resultType) in
                                                                                                                     
-                                                    userEmail = resultRPI.retrieveProfileInformationResponse?.contactMethods?[0].emailContactMethodDetail?.emailAddress ?? ""
+                                                    userEmail = resultRPI.retrieveProfileInformationResponse?.contactMethods?[safe:0]?.emailContactMethodDetail?.emailAddress ?? ""
                                                                                                                     
-                                                    userPhone = resultRPI.retrieveProfileInformationResponse?.contactMethods?[0].mobileContactMethodDetail?.mobileNumber ?? ""
+                                                    userPhone = resultRPI.retrieveProfileInformationResponse?.contactMethods?[safe:0]?.mobileContactMethodDetail?.mobileNumber ?? ""
                                                                                                                  
                                                     let onAcceptEvent = {
                                                         let vcRecovery = CodeRecoveryPasswordVC()
