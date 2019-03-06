@@ -54,6 +54,7 @@ class CodeRecoveryPasswordVC: UIViewController, LinkeableEventDelegate {
         viewContainer.addSubview(headerView)
         codeContainer = CodeContainerView()
         codeContainer.frame = CGRect(x: 0, y: 0, width: self.view.frame.width * 0.45, height: 40)
+        codeContainer.numberCode =  6
         codeContainer.setPosition()
         viewContainer.addSubview(codeContainer)
         questionLabel.text = conf?.translations?.data?.registro?.pinValidationResendText != nil ? (conf?.translations?.data?.registro?.pinValidationResendText)! : "¿No te ha llegado el código?"
