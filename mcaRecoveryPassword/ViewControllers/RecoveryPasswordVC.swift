@@ -48,6 +48,7 @@ class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, LinkeableEventD
         txtRUT.textField.font = UIFont(name: RobotoFontName.RobotoRegular.rawValue, size: CGFloat(14))
         txtRUT.textField.keyboardType = .default
         txtRUT.textField.addTarget(self, action: #selector(textFieldDidBeginEditing(_:)), for: .editingDidBegin)
+        txtRUT.textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         if self.view.frame.size.width == 320 {
             txtRUT.changeFont(font: UIFont(name: RobotoFontName.RobotoRegular.rawValue, size: CGFloat(12))!)
         }
@@ -142,7 +143,7 @@ class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, LinkeableEventD
                     textField.text = currentText.replacingOccurrences(of: separator, with: "")
                 }
             }
-            self.habilitarRecuperar()
+//            self.habilitarRecuperar()
         }
     }
     private func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
@@ -162,6 +163,7 @@ class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, LinkeableEventD
         if nsString.length > maxText {
             return false
         }
+        self.habilitarRecuperar()
         return true
     }
     
@@ -171,7 +173,7 @@ class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, LinkeableEventD
     }
     
     
-    private func textFieldDidEndEditing(_ textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == txtRUT.textField {
             let IdentificationNumber = txtRUT.textField.text!
             let maskedString = IdentificationNumber.enmascararRut()
@@ -192,6 +194,13 @@ class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, LinkeableEventD
                 
             }
         }
+    }
+    
+    func textFieldDidChange(_ textField: UITextField) {
+        if let currentText = textField.text, let separator = mcaManagerSession.getGeneralConfig()?.country?.userProfileIdConfig?.separador, currentText.contains(separator) {
+            textField.text = currentText.replacingOccurrences(of: separator, with: "")
+        }
+        habilitarRecuperar()
     }
     
     func nextRecovery() {
@@ -289,17 +298,23 @@ class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, LinkeableEventD
     func habilitarRecuperar() {
         let newString = (txtRUT.textField.text! as NSString)
         
-        if (termsAndConditions.isChecked == true && newString.length >= minText){
-            nextBtn.layer.borderColor = institutionalColors.claroRedColor.cgColor
-            nextBtn.setTitleColor(institutionalColors.claroRedColor, for: UIControlState.normal)
-            nextBtn.alpha = 1.0
-            nextBtn.isEnabled = true
-        }
-        else{
-            nextBtn.layer.borderColor = institutionalColors.claroLightGrayColor.cgColor
-            nextBtn.setTitleColor(institutionalColors.claroLightGrayColor, for: UIControlState.normal)
-            nextBtn.alpha = 0.5
-            nextBtn.isEnabled = false
+        if (true == self.txtRUT.textField.text!.isEmpty) {
+            txtRUT.mandatoryInformation.displayView(customString: conf?.translations?.data?.generales?.emptyField)
+            return;
+        } else {
+            txtRUT.mandatoryInformation.hideView()
+            if (termsAndConditions.isChecked == true && newString.length >= minText){
+                nextBtn.layer.borderColor = institutionalColors.claroRedColor.cgColor
+                nextBtn.setTitleColor(institutionalColors.claroRedColor, for: UIControlState.normal)
+                nextBtn.alpha = 1.0
+                nextBtn.isUserInteractionEnabled = true
+            }
+            else{
+                nextBtn.layer.borderColor = institutionalColors.claroLightGrayColor.cgColor
+                nextBtn.setTitleColor(institutionalColors.claroLightGrayColor, for: UIControlState.normal)
+                nextBtn.alpha = 0.5
+                nextBtn.isUserInteractionEnabled = false
+            }
         }
     }
     
