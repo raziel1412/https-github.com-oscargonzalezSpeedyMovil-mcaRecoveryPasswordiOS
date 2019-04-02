@@ -58,8 +58,8 @@ class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, LinkeableEventD
         lblTextDescription.numberOfLines = 0
         viewContainer.addSubview(lblTextDescription)
         nextBtn = RedBorderWhiteBackgroundButton(textButton: (conf?.translations?.data?.generales?.nextBtn)!)
-        nextBtn.layer.borderColor = institutionalColors.claroLightGrayColor.cgColor
-        nextBtn.setTitleColor(institutionalColors.claroLightGrayColor, for: UIControlState.normal)
+//        nextBtn.layer.borderColor = institutionalColors.claroLightGrayColor.cgColor
+        nextBtn.setTitleColor(institutionalColors.claroRedColor, for: UIControlState.normal)
         nextBtn.alpha = 0.5
         nextBtn.addTarget(self, action: #selector(nextRecovery), for: .touchUpInside)
         viewContainer.addSubview(nextBtn)
@@ -304,14 +304,14 @@ class RecoveryPasswordVC: UIViewController, UITextFieldDelegate, LinkeableEventD
         } else {
             txtRUT.mandatoryInformation.hideView()
             if (termsAndConditions.isChecked == true && newString.length >= minText){
-                nextBtn.layer.borderColor = institutionalColors.claroRedColor.cgColor
-                nextBtn.setTitleColor(institutionalColors.claroRedColor, for: UIControlState.normal)
+//                nextBtn.layer.borderColor = institutionalColors.claroRedColor.cgColor
+//                nextBtn.setTitleColor(institutionalColors.claroRedColor, for: UIControlState.normal)
                 nextBtn.alpha = 1.0
                 nextBtn.isUserInteractionEnabled = true
             }
             else{
-                nextBtn.layer.borderColor = institutionalColors.claroLightGrayColor.cgColor
-                nextBtn.setTitleColor(institutionalColors.claroLightGrayColor, for: UIControlState.normal)
+//                nextBtn.layer.borderColor = institutionalColors.claroLightGrayColor.cgColor
+//                nextBtn.setTitleColor(institutionalColors.claroLightGrayColor, for: UIControlState.normal)
                 nextBtn.alpha = 0.5
                 nextBtn.isUserInteractionEnabled = false
             }
